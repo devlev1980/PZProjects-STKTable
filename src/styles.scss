@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-table{
+  width: 100%;
+  background: #96C5F7;
+
+  th{
+   font-size:17px;
+    color: white;
+    background: #0B1D51;
+
+  }
+ tr{
+   td{
+     color: #4F6367;
+     padding: 10px;
+     font-size: 18px;
+     border-right: 1px solid rgba(0,0,0,.12);
+   }
+ }
+}
