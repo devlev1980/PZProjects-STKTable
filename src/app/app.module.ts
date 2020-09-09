@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule, MatSortModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSortModule, MatTableModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -19,7 +19,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatSortModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule,
+    MatButtonModule
 
   ],
   providers: [],

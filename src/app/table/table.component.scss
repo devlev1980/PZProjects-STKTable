@@ -1,8 +1,20 @@
-form{
-  table{
-    input[type="text"]:active{
-      border: 0 !important;
+.container{
+  padding: 10px 20px;
+  form{
+    table{
+      input[type="text"]:active{
+        border: 0 !important;
+      }
+
     }
   }
+  .actions{
+    margin-top: 3rem;
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
+
 
