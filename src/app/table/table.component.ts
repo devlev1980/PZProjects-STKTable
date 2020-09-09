@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 export interface PeriodicElement {
-  itemsName: string;
+  itemName: string;
   region: string;
   customerName: string;
   ecSalesPrice: number;
@@ -22,7 +23,7 @@ interface IDataPerMonth {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -43,7 +44,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -64,7 +65,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -85,7 +86,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -106,7 +107,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -127,7 +128,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -148,7 +149,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -169,7 +170,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -190,7 +191,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -211,7 +212,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   },
   {
-    itemsName: 'GOLD 60LT Drum',
+    itemName: 'GOLD 60LT Drum',
     region: 'Columbia',
     customerName: 'Adama Culumbia SAS',
     ecSalesPrice: 12,
@@ -242,9 +243,31 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableComponent implements OnInit {
   displayedColumns: string[] = ['itemName', 'region', 'customerName', 'ecSalesPrice', 'hqHtdCost', 'transferPrice', 'localizationCost', 'localCost', 'gm', 'jan20qty', 'jan20usd', 'feb20qty', 'feb20usd'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  tableForm: FormGroup;
 
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
+    this.tableForm = this.fb.group({
+      itemName: [{value: '', disabled: true}],
+      region: [{value: '', disabled: true}],
+      customerName: [{value: '', disabled: true}],
+      ecSalesPrice: [{value: '', disabled: true}],
+      hqHtdCost: [{value: '', disabled: true}],
+      transferPrice: [{value: '', disabled: true}],
+      localizationCost: [{value: '', disabled: true}],
+      localCost: [{value: '', disabled: true}],
+      gm: [{value: '', disabled: true}],
+      januaryData: this.fb.group({
+        quantity: [''],
+        usd: ['']
+      }),
+      februaryData: this.fb.group({
+        quantity: [''],
+        usd: ['']
+      })
+    });
   }
 
 }

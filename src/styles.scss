@@ -2,7 +2,7 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; outline: none }
 
 .mat-table{
   width: 100%;
@@ -20,6 +20,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
      padding: 10px;
      font-size: 18px;
      border-right: 1px solid rgba(0,0,0,.12);
+
+     input.readonly{
+       border: 0;
+       background-color: transparent;
+       width: 100%;
+
+     }
+
    }
  }
 }

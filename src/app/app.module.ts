@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule, MatSortModule, MatTableModule} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import {MatInputModule, MatSortModule, MatTableModule} from '@angular/material';
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],
