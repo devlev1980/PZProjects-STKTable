@@ -2,7 +2,7 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; outline: none }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; outline: none  }
 
 .mat-table{
   width: 100%;
@@ -11,6 +11,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; outline: no
     .mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin {
       border: 1px solid white;
     }
+  }
+  input.mat-input-element {
+    //width: 100%;
+    margin-top: -.0625em;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    outline: none;
+    /* background: transparent; */
+    height: 30px;
+    /* line-height: 90px; */
   }
   tr.mat-header-row{
     background: #0B1D51;
@@ -39,12 +51,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; outline: no
      color: #4F6367;
      padding: 10px;
      font-size: 18px;
+     height: 100%;
      border-right: 1px solid rgba(0,0,0,.12);
 
      input.readonly{
        border: 0;
        background-color: transparent;
-       width: 100%;
+       //width: 100%;
 
      }
 

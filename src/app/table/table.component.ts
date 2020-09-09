@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {SelectionModel} from '@angular/cdk/collections';
+import {SharepointService} from '../services/sharepoint.service';
 
 export interface PeriodicElement {
   checked: boolean;
@@ -284,10 +285,13 @@ export class TableComponent implements OnInit {
     console.log('All Selected rows', this.selectedRows);
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private sharePointService: SharepointService) {
   }
 
   ngOnInit() {
+    this.sharePointService.getFileData().subscribe(data=>{
+      console.log(data);
+    })
   }
 
 
